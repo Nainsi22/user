@@ -1,0 +1,109 @@
+
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello Page</title>
+    <style>
+        body {
+            background: linear-gradient(45deg, #ff7e5f, #feb47b);
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+            color: white;
+            overflow: hidden;
+        }
+
+        h1 {
+            font-size: 4rem;
+            color: #fff;
+            text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        /* Animation for fadeIn */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .image-container {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+            animation: slideUp 3s ease-in-out infinite;
+        }
+
+        .image-container img {
+            width: 200px;
+            height: auto;
+            border-radius: 50%;
+            margin-top: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .change-theme-btn {
+            padding: 12px 30px;
+            background-color: #007bff;
+            color: white;
+            font-size: 1.5rem;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            margin-top: 30px;
+        }
+
+        .change-theme-btn:hover {
+            background-color: #0056b3;
+            transform: scale(1.1);
+        }
+
+        /* Animation for background images */
+        @keyframes slideUp {
+            0% { transform: translateY(50px); opacity: 0; }
+            50% { transform: translateY(0); opacity: 1; }
+            100% { transform: translateY(-50px); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <div>
+        <h1>Hello World</h1>
+        <p>Welcome to this creative page!</p>
+        <button class="change-theme-btn" onclick="changeTheme()">Change Theme</button>
+    </div>
+
+    <div class="image-container">
+        <img src="https://via.placeholder.com/200" alt="Dynamic Image">
+    </div>
+
+    <script>
+        function changeTheme() {
+            const body = document.querySelector('body');
+            const currentColor = body.style.background;
+            if (currentColor === 'linear-gradient(45deg, #ff7e5f, #feb47b)') {
+                body.style.background = 'linear-gradient(45deg, #4e54c8, #8f94fb)';
+            } else {
+                body.style.background = 'linear-gradient(45deg, #ff7e5f, #feb47b)';
+            }
+        }
+    </script>
+
+</body>
+
+
